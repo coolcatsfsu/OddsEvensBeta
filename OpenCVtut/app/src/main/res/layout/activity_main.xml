@@ -101,13 +101,24 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <SeekBar
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="Place your hand in front of the camera and tap screen to begin. Hold up one or two fingers"
+        android:id="@+id/msg"
+        android:layout_above="@+id/turntitle"
+        android:layout_alignParentEnd="true" />
+
+    <!--<SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar1"
         android:layout_below="@+id/badge"
         android:layout_centerHorizontal="true"
         android:max="30000"
-        android:indeterminate="false" />
+        android:indeterminate="false" />-->
 
 </RelativeLayout>

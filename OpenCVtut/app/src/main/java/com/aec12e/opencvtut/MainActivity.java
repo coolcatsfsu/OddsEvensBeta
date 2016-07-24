@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private Size SPECTRUM_SIZE;
     private TextView fingerNumberTEXT;
     private int fingerNumber = 0;
-    private SeekBar seekBarMINthreshold = null, seekBarMAXthreshold = null;
+    //private SeekBar seekBarMINthreshold = null, seekBarMAXthreshold = null;
     final Handler handler = new Handler();
     private int winner = 0;
     private Mat mP1;
@@ -113,10 +113,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         OpenCV_CameraView = (CustomSurfaceView) findViewById(R.id.main_surface_view);
         OpenCV_CameraView.setCvCameraViewListener(this);
         fingerNumberTEXT = (TextView) findViewById(R.id.numberOfFingers);
-
+        /*
         seekBarMINthreshold = (SeekBar) findViewById(R.id.seekBar1);
-        seekBarMINthreshold.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            int progression = 0;
+        //seekBarMINthreshold.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            //int progression = 0;
 
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 progression = progress;
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 //seekBarTextMINthreshold.setText(String.valueOf(progression));
             }
         });
-        seekBarMINthreshold.setProgress(8700);
+        seekBarMINthreshold.setProgress(8700);*/
 
         /*cameraFeed.setMaxFrameSize(720,1280);
         cameraFeed.setVisibility(SurfaceView.VISIBLE);
@@ -225,7 +225,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         //return mRgba;
         gray = inputFrame.gray();
         rgba = inputFrame.rgba();
-        thresholds = seekBarMINthreshold.getProgress();
+        //thresholds = seekBarMINthreshold.getProgress(); 8700
+        thresholds = 8700;
 
         Imgproc.GaussianBlur(rgba, rgba, new Size(3, 3), 1, 1);
 
