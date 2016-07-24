@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    tools:context="com.aec12e.opencvtut.MainActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <com.aec12e.opencvtut.CustomSurfaceView
+        android:id="@+id/main_surface_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        opencv:camera_id="any"
+        opencv:show_fps="true" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/upper"
+        android:src="@mipmap/upper"
+        android:layout_alignParentStart="true"
+        android:scaleType="fitStart"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lower"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/lower"
+        android:scaleType="fitEnd"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture P2"
+        android:id="@+id/p2Capt"
+        android:tag="2"
+        android:onClick="takePlayer2pic"
+        android:layout_above="@+id/procWin"
+        android:layout_toEndOf="@+id/procWin" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Capture P1"
+        android:id="@+id/p1Capt"
+        android:singleLine="true"
+        android:tag="1"
+        android:onClick="takePlayer1pic"
+        android:layout_alignTop="@+id/p2Capt"
+        android:layout_toStartOf="@+id/turntitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Winner"
+        android:id="@+id/procWin"
+        android:onClick="showWinner"
+        android:tag="1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:id="@+id/badge"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:maxWidth="50dp"
+        android:minHeight="100dp"
+        android:maxHeight="50dp"
+        android:longClickable="false"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/p1Capt"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/turntitle"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="play"
+        android:singleLine="false"
+        android:phoneNumber="true"
+        android:tag="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/numberOfFingers"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar1"
+        android:layout_below="@+id/badge"
+        android:layout_centerHorizontal="true"
+        android:max="30000"
+        android:indeterminate="false" />
+
+</RelativeLayout>
